@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: treehole-249210103
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: STUDENT_ID
+        value: "249210103"
+      - key: NODE_VERSION
+        value: "22"

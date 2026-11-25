@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>一隅 · 树洞</title>
+  <meta name="description" content="把心事说给风听 —— 一个安静的树洞网站" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23c98a5e'/%3E%3Cpath d='M32 44c-8-6-12-10-12-16a7 7 0 0 1 12-4 7 7 0 0 1 12 4c0 6-4 10-12 16z' fill='%23fff8f0'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="%BASE%style.css" />
+</head>
+<body data-base="%BASE%">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="glow glow-a" aria-hidden="true"></div>
+  <div class="glow glow-b" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <header class="hero">
+      <p class="brand">TREE HOLE · 一隅</p>
+      <h1>把心事，说给风听</h1>
+      <p class="lede">这里没有熟人的名字，只有路过的风。<br />写下此刻，它会被轻轻收好。</p>
+      <div class="hero-rule" aria-hidden="true"><span></span><em>·</em><span></span></div>
+    </header>
+
+    <section class="composer card-soft" aria-labelledby="composer-title">
+      <h2 id="composer-title" class="section-title">写一封没有地址的信</h2>
+      <form id="message-form" novalidate>
+        <div class="field">
+          <label for="nickname">昵称</label>
+          <input
+            id="nickname"
+            name="nickname"
+            type="text"
+            maxlength="12"
+            autocomplete="off"
+            placeholder="随便叫什么都好，比如「晚风」"
+          />
+        </div>
+
+        <div class="field">
+          <div class="field-head">
+            <label for="content">想说的话</label>
+            <span class="counter"><span id="counter">0</span>/300</span>
+          </div>
+          <textarea
+            id="content"
+            name="content"
+            rows="5"
+            maxlength="300"
+            placeholder="今天过得怎么样？有什么没说出口的话，可以先放在这里……"
+          ></textarea>
+        </div>
+
+        <p class="form-error" id="form-error" role="alert" aria-live="polite"></p>
+
+        <div class="composer-actions">
+          <span class="hint">内容仅匿名展示，会记录一次来自你所在省份的足迹</span>
+          <button class="btn-submit" type="submit">
+            <span class="btn-text">投进树洞</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16">
+              <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="feed" aria-labelledby="feed-title">
+      <div class="feed-head">
+        <h2 id="feed-title" class="section-title">路过的心事</h2>
+        <span class="feed-count" id="feed-count"></span>
+      </div>
+
+      <div id="message-list" class="message-list" aria-live="polite">
+        <p class="loading">正在把心事捞上来……</p>
+      </div>
+
+      <div class="empty" id="empty-state" hidden>
+        <p>还没有人开口。<br />要不，你来做第一个？</p>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>一隅树洞 · 有些话，说出来就轻了</p>
+      <p class="site-id">学号路由 /249210103</p>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="%BASE%app.js" defer></script>
+</body>
+</html>
